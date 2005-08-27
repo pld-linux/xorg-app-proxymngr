@@ -11,11 +11,11 @@ Patch0:		proxymngr-man.patch
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	pkgconfig >= 0.19
 BuildRequires:	xorg-app-lbxproxy
 BuildRequires:	xorg-lib-libXt-devel
-BuildRequires:	xorg-util-util-macros
-BuildRequires:	pkgconfig >= 0.19
 BuildRequires:	xorg-proto-xproxymanagementprotocol-devel
+BuildRequires:	xorg-util-util-macros
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
