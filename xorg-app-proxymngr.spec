@@ -1,5 +1,3 @@
-# $Rev: 3361 $, $Date: 2005-08-27 17:42:47 $
-#
 Summary:	proxymngr application
 Summary(pl):	Aplikacja proxymngr
 Name:		xorg-app-proxymngr
@@ -18,10 +16,7 @@ BuildRequires:	xorg-lib-libXt-devel
 BuildRequires:	xorg-util-util-macros
 BuildRequires:	pkgconfig >= 0.19
 BuildRequires:	xorg-proto-xproxymanagementprotocol-devel
-BuildRoot:	%{tmpdir}/proxymngr-%{version}-root-%(id -u -n)
-
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 proxymngr application.
@@ -29,11 +24,9 @@ proxymngr application.
 %description -l pl
 Aplikacja proxymngr.
 
-
 %prep
 %setup -q -n proxymngr-%{version}
 %patch0 -p1
-
 
 %build
 %{__aclocal}
@@ -44,17 +37,14 @@ Aplikacja proxymngr.
 
 %{__make}
 
-
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-
 %clean
 rm -rf $RPM_BUILD_ROOT
-
 
 %files
 %defattr(644,root,root,755)
