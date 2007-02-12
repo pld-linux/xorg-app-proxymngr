@@ -1,5 +1,5 @@
 Summary:	proxymngr application
-Summary(pl.UTF-8):   Aplikacja proxymngr
+Summary(pl.UTF-8):	Aplikacja proxymngr
 Name:		xorg-app-proxymngr
 Version:	1.0.1
 Release:	1
