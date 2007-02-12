@@ -1,5 +1,5 @@
 Summary:	proxymngr application
-Summary(pl):	Aplikacja proxymngr
+Summary(pl.UTF-8):   Aplikacja proxymngr
 Name:		xorg-app-proxymngr
 Version:	1.0.1
 Release:	1
@@ -22,7 +22,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 proxymngr application.
 
-%description -l pl
+%description -l pl.UTF-8
 Aplikacja proxymngr.
 
 %prep
