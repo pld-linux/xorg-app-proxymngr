@@ -1,5 +1,5 @@
-Summary:	proxymngr application
-Summary(pl.UTF-8):	Aplikacja proxymngr
+Summary:	proxymngr application - proxy manager service
+Summary(pl.UTF-8):	Aplikacja proxymngr - usługa zarządzająca proxy
 Name:		xorg-app-proxymngr
 Version:	1.0.1
 Release:	1
@@ -20,10 +20,16 @@ Requires:	xorg-app-lbxproxy
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-proxymngr application.
+The proxy manager (proxymngr) is responsible for resolving requests
+from xfindproxy (and other similar clients), starting new proxies when
+appropriate, and keeping track of all of the available proxy services.
+The proxy manager strives to reuse existing proxies whenever possible.
 
 %description -l pl.UTF-8
-Aplikacja proxymngr.
+Zarządca proxy (proxymngr) odpowiada za spełnianie żądań od xfindproxy
+(i innych podobnych klientów), uruchamianie nowych proxy w razie
+potrzeby i śledzenie wszystkich dostępnych usług proxy. Zarządca proxy
+stara się w miarę możliwości wykorzystywać ponownie istniejące proxy.
 
 %prep
 %setup -q -n proxymngr-%{version}
