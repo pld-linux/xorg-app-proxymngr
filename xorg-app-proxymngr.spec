@@ -1,12 +1,13 @@
 Summary:	proxymngr application - proxy manager service
 Summary(pl.UTF-8):	Aplikacja proxymngr - usługa zarządzająca proxy
 Name:		xorg-app-proxymngr
-Version:	1.0.2
+Version:	1.0.3
 Release:	1
 License:	MIT
 Group:		X11/Applications
 Source0:	http://xorg.freedesktop.org/releases/individual/app/proxymngr-%{version}.tar.bz2
-# Source0-md5:	714c4656e749ce856690b872e3d4ac4c
+# Source0-md5:	b0dad55abda277f919f6213751badb04
+Patch0:		%{name}-configdir.patch
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
@@ -14,6 +15,7 @@ BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xorg-lib-libICE-devel
 BuildRequires:	xorg-lib-libXt-devel
 BuildRequires:	xorg-lib-xtrans-devel
+BuildRequires:	xorg-proto-xproto-devel >= 7.0.17
 BuildRequires:	xorg-proto-xproxymanagementprotocol-devel
 BuildRequires:	xorg-util-util-macros >= 1.8
 Requires:	xorg-app-lbxproxy
@@ -33,6 +35,7 @@ stara się w miarę możliwości wykorzystywać ponownie istniejące proxy.
 
 %prep
 %setup -q -n proxymngr-%{version}
+%patch0 -p1
 
 %build
 %{__aclocal}
@@ -42,18 +45,13 @@ stara się w miarę możliwości wykorzystywać ponownie istniejące proxy.
 %configure \
 	LBXPROXY=%{_bindir}/lbxproxy
 
-# NOTE different CONFIG_DIR values - there is a bug in proxymngr 1.0.[12] Makefile.am
-# ("$(CONFIG_DIR)/proxymngr/pmconfig" is appended during build, but pm config is
-# installed in $(CONFIG_DIR) at install stage)
-%{__make} \
-	CONFIG_DIR=/etc/X11
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	CONFIG_DIR=/etc/X11/proxymngr
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT

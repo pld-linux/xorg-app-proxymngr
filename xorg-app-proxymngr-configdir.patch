@@ -1,0 +1,11 @@
+--- proxymngr-1.0.3/Makefile.am.orig	2013-02-11 02:21:47.000000000 +0100
++++ proxymngr-1.0.3/Makefile.am	2013-02-12 18:08:10.786166637 +0100
+@@ -28,7 +28,7 @@
+ 	$(PROXYMNGR_CFLAGS)				\
+ 	-DXVENDORNAME=\"The\ X\.Org\ Foundation\"	\
+ 	-DXORG_RELEASE=\"Release\ $(VERSION)\"		\
+-	-DCONFIG_FILE=\"$(CONFIG_DIR)/proxymngr/pmconfig\"
++	-DCONFIG_FILE=\"$(CONFIG_DIR)/pmconfig\"
+ 
+ proxymngr_LDADD = $(PROXYMNGR_LIBS)
+ 
