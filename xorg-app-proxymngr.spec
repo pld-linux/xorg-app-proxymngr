@@ -1,12 +1,12 @@
 Summary:	proxymngr application - proxy manager service
 Summary(pl.UTF-8):	Aplikacja proxymngr - usługa zarządzająca proxy
 Name:		xorg-app-proxymngr
-Version:	1.0.3
+Version:	1.0.4
 Release:	1
 License:	MIT
 Group:		X11/Applications
 Source0:	http://xorg.freedesktop.org/releases/individual/app/proxymngr-%{version}.tar.bz2
-# Source0-md5:	b0dad55abda277f919f6213751badb04
+# Source0-md5:	5f6e15cad2609c7bfdc0efb81a02b6ba
 Patch0:		%{name}-configdir.patch
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
@@ -62,4 +62,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/proxymngr
 %dir /etc/X11/proxymngr
 %config(noreplace) %verify(not md5 mtime size) /etc/X11/proxymngr/pmconfig
-%{_mandir}/man1/proxymngr.1x*
+%{_mandir}/man1/proxymngr.1*
