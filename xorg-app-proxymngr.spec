@@ -35,7 +35,7 @@ stara się w miarę możliwości wykorzystywać ponownie istniejące proxy.
 
 %prep
 %setup -q -n proxymngr-%{version}
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %{__aclocal}
